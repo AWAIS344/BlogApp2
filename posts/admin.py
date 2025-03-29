@@ -11,6 +11,9 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links=['id',"post_title"]
     list_filter=["updated_at"]
     search_fields=["post_title"]
+    
+admin.site.site_header= "My Blog"
+admin.site.index_title = "My Blog Controller"
 
 
 
