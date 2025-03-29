@@ -1,1 +1,17 @@
 <h1>  Hello World </h1>
+
+
+{% for post in posts %} 
+
+<div>
+    <h1>{{post.name}}</h1>
+    <p>{{post.content}}</p>
+</div>
+
+{% empty %}
+
+<h2>No Posts Available</h2>
+
+{% endfor %}
+
+
