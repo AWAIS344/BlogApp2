@@ -7,8 +7,11 @@ from .models import Posts
 
 @admin.register(Posts)   #if used this dont use code at line 14
 class PostAdmin(admin.ModelAdmin):
-    list_display=["id","post_title","post_content"]
+    list_display=["id","post_title","updated_at"]
+    list_display_links=['id',"post_title"]
+    list_filter=["updated_at"]
+    search_fields=["post_title"]
 
 
 
-admin.site.register(Posts, PostAdmin)  #we can use code at line 7 except this line
+# admin.site.register(Posts, PostAdmin)  #we can use code at line 7 except this line
