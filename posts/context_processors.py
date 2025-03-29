@@ -1,8 +1,8 @@
-from django.shortcuts import render
 
-# Create your views here.
 
-posts=[
+def post(request):
+
+    posts=[
     {
         "id":0,"name":"Django","content":"Django is very powerful Python Based framework"
     },
@@ -13,11 +13,5 @@ posts=[
         "id":2,"name":"Node Js","content":"Node Js is very powerful Js framework widely used"
     },
 ]
-
-
-
-
-
-def Home(request):
     
-    return render(request , "index.html")
+    return {"posts":posts}
