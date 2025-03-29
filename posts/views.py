@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.http import Http404 , HttpResponse
+from django.shortcuts import get_object_or_404
+
+from .models import Posts
 
 # Create your views here.
 
@@ -20,13 +23,16 @@ posts=[
 
 
 def Home(request):
+    posts=Posts.objects.all()
+    context={"posts":posts}
+    return render(request , "index.html",context)
 
-    raise Http404()
+
 
 def PostPage(request,id):
 
     sel_post = next((post for post in posts if post["id"] == id), None)
-    
+
     if sel_post is None:  # If no match found, raise 404
         raise Http404()
         
